@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="az" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ASR Development Consulting Group</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+</head>
+
+<body>
+
+  <div class="cur-ring" aria-hidden="true"></div>
+  <div class="cur-dot" aria-hidden="true"></div>
+
+  <div class="shell">
+
+    <header class="hdr" id="hdr">
+      <button class="logo-btn" onclick="goTo('hero')" aria-label="Ana səhifə">
+        <img src="images/logo.png" alt="ASR Development Consulting Group" class="logo-svg logo-img" />
+      </button>
+
+      <nav class="desk-nav" aria-label="Naviqasiya">
+        <div class="ni has-drop" id="dd-about">
+          <button class="nav-link" id="nl-about" onclick="goTo('about')">Haqqımızda <svg class="chev" width="13"
+              height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="m6 9 6 6 6-6" />
+            </svg></button>
+          <div class="drop" id="drop-about">
+            <button onclick="goTo('about')">Şirkət profili</button>
+            <button onclick="goTo('timeline')">Tariximiz</button>
+            <button onclick="goTo('contact')">Ekspert hovuzu</button>
+          </div>
+        </div>
+        <div class="ni"><button class="nav-link" id="nl-services" onclick="goTo('services')">Xidmətlər</button></div>
+        <div class="ni has-drop" id="dd-gallery">
+          <button class="nav-link" id="nl-gallery" onclick="goTo('gallery')">Daxili mətbəx <svg class="chev" width="13"
+              height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="m6 9 6 6 6-6" />
+            </svg></button>
+          <div class="drop" id="drop-gallery">
+            <button onclick="goTo('gallery')">Real Audit</button>
+            <button onclick="goTo('gallery')">Real Təlim</button>
+            <button onclick="goTo('gallery')">Real Ofis</button>
+          </div>
+        </div>
+        <div class="ni"><button class="nav-link" id="nl-projects" onclick="goTo('projects')">Təcrübəmiz</button></div>
+        <div class="ni"><button class="nav-link" id="nl-knowledge" onclick="goTo('knowledge')">Bilik mərkəzi</button>
+        </div>
+        <div class="ni"><button class="nav-link" id="nl-contact" onclick="goTo('contact')">Əlaqə</button></div>
+      </nav>
+
+      <div class="hdr-right">
+        <button class="mode-btn" id="modeBtn" onclick="toggleMode()" aria-label="Modu dəyiş">
+          <span class="mode-icon" id="modeIcon">🌙</span>
+          <span id="modeTxt">Light</span>
+        </button>
+        <button class="ham" id="hamBtn" onclick="toggleMob()" aria-label="Menyu">
+          <svg id="hamIcon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 6h16" />
+            <path d="M4 12h16" />
+            <path d="M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <nav class="mob-nav" id="mobNav" aria-label="Mobil naviqasiya">
+      <button onclick="goTo('about')">Haqqımızda</button>
+      <button onclick="goTo('services')">Xidmətlər</button>
+      <button onclick="goTo('gallery')">Daxili mətbəx</button>
+      <button onclick="goTo('projects')">Təcrübəmiz</button>
+      <button onclick="goTo('knowledge')">Bilik mərkəzi</button>
+      <button onclick="goTo('contact')">Əlaqə</button>
+    </nav>
+
+    <main>
+
+      <section id="hero" class="sec-hero">
+        <div class="hero-bg-wrap">
+          <img src="images/hero-bg.jpg" alt="" class="hero-bg-img" />
+          <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-body">
+          <span class="hero-badge">
+            <span class="hero-badge-dot"></span>
+            15 İllik Peşəkar Təcrübə
+          </span>
+          <h1>Strateji Həllər,<br /><em>Dayanıqlı İnkişaf.</em></h1>
+          <p>Qida təhlükəsizliyi, strateji idarəetmə və hüquqi ekspertiza sahəsində 100-dən çox uğurlu layihə ilə
+            müəssisənizin beynəlxalq standartlara çatmasını təmin edirik.</p>
+          <div class="hero-acts">
+            <button class="btn-gold" onclick="goTo('contact')">Konsultasiya Alın</button>
+            <button class="btn-outline" onclick="goTo('projects')">Layihələrə Baxın</button>
+          </div>
+        </div>
+      </section>
+
+      <div class="stats-section">
+        <div class="stats-inner" id="statsInner">
+          <div class="stat-cell">
+            <div class="stat-ic"><svg viewBox="0 0 24 24">
+                <circle cx="12" cy="8" r="6" />
+                <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11" />
+              </svg></div>
+            <div class="stat-text"><strong id="s0">0</strong><span>Sertifikatlı Ekspert</span></div>
+          </div>
+          <div class="stat-cell">
+            <div class="stat-ic"><svg viewBox="0 0 24 24">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2Z" />
+              </svg></div>
+            <div class="stat-text"><strong id="s1">0</strong><span>Uğurlu Layihə</span></div>
+          </div>
+          <div class="stat-cell">
+            <div class="stat-ic"><svg viewBox="0 0 24 24">
+                <rect x="3" y="3" width="18" height="14" rx="2" />
+                <path d="M9 17v4" />
+                <path d="M15 17v4" />
+                <path d="M9 21h6" />
+                <path d="M7 8h10" />
+                <path d="M7 11h6" />
+              </svg></div>
+            <div class="stat-text"><strong id="s2">0</strong><span>İl Təcrübə</span></div>
+          </div>
+          <div class="stat-cell">
+            <div class="stat-ic"><svg viewBox="0 0 24 24">
+                <path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2" />
+                <rect x="9" y="3" width="6" height="4" rx="1" />
+                <path d="M9 12h6" />
+                <path d="M9 16h4" />
+              </svg></div>
+            <div class="stat-text"><strong id="s3">0</strong><span>Tərəfdaş Bazar</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="marquee-wrap" aria-hidden="true">
+        <div class="marquee-track" id="marqueeTrack"></div>
+      </div>
+
+      <section id="about" class="sec sec-light">
+        <div class="wrap two-col">
+          <div>
+            <span class="stag stag-dark">Haqqımızda</span>
+            <h2 class="sh sh-dark">Etibarlı Tərəfdaşınız</h2>
+            <p class="sp sp-dark">ASR Development Consulting Group 2009-cu ildən etibarən qida sənayesi, HoReCa,
+              istehsalat və dövlət sektoru üçün strateji konsaltinq xidmətləri göstərir.</p>
+            <p class="sp sp-dark">Komandamız müştərinin real əməliyyat prosesini dərindən analiz edir, tətbiq edilə
+              bilən həll planı hazırlayır və uğurlu nəticəyə qədər dəstək verir.</p>
+            <ul class="checks">
+              <li><span class="chk-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="9" />
+                    <path d="m8 12 3 3 5-5" />
+                  </svg></span>Beynəlxalq standartlara əsaslanan metodologiya</li>
+              <li><span class="chk-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="9" />
+                    <path d="m8 12 3 3 5-5" />
+                  </svg></span>AQTA tələblərinə uyğun praktiki audit</li>
+              <li><span class="chk-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="9" />
+                    <path d="m8 12 3 3 5-5" />
+                  </svg></span>Sektor üzrə ixtisaslaşmış ekspert hovuzu</li>
+              <li><span class="chk-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="9" />
+                    <path d="m8 12 3 3 5-5" />
+                  </svg></span>Sənədləşmə, təlim və tətbiq dəstəyinin tam dövrü</li>
+            </ul>
+          </div>
+          <div class="cert-grid">
+            <div class="cert-card cert-img-card" style="padding:0;overflow:hidden;position:relative;min-height:160px;">
+              <img src="images/asr-hero.jpg" alt="ASR Group"
+                style="width:100%;height:160px;object-fit:cover;display:block;" />
+              <div
+                style="position:absolute;inset:0;background:linear-gradient(to top,rgba(6,9,18,.7) 0%,transparent 55%);">
+              </div>
+              <div style="position:absolute;bottom:12px;left:14px;right:14px;">
+                <p class="cert-t" style="color:#f0f6ff;text-align:left;margin:0;">ISO 22000 Lead Auditor</p>
+                <p class="cert-s" style="color:rgba(255,255,255,.65);text-align:left;">Beynəlxalq sertifikat</p>
+              </div>
+            </div>
+            <div class="cert-card cert-img-card" style="padding:0;overflow:hidden;position:relative;min-height:160px;">
+              <img src="images/team-meeting.jpg" alt="Komanda"
+                style="width:100%;height:160px;object-fit:cover;display:block;" />
+              <div
+                style="position:absolute;inset:0;background:linear-gradient(to top,rgba(6,9,18,.7) 0%,transparent 55%);">
+              </div>
+              <div style="position:absolute;bottom:12px;left:14px;right:14px;">
+                <p class="cert-t" style="color:#f0f6ff;text-align:left;margin:0;">HACCP Mütəxəssisi</p>
+                <p class="cert-s" style="color:rgba(255,255,255,.65);text-align:left;">Akkreditasiya sertifikatı</p>
+              </div>
+            </div>
+            <div class="cert-card cert-img-card" style="padding:0;overflow:hidden;position:relative;min-height:160px;">
+              <img src="images/strategy.jpg" alt="Strateji"
+                style="width:100%;height:160px;object-fit:cover;display:block;" />
+              <div
+                style="position:absolute;inset:0;background:linear-gradient(to top,rgba(6,9,18,.7) 0%,transparent 55%);">
+              </div>
+              <div style="position:absolute;bottom:12px;left:14px;right:14px;">
+                <p class="cert-t" style="color:#f0f6ff;text-align:left;margin:0;">Dövlət Təşəkkürnaməsi</p>
+                <p class="cert-s" style="color:rgba(255,255,255,.65);text-align:left;">Rəsmi mükafat</p>
+              </div>
+            </div>
+            <div class="cert-card cert-img-card" style="padding:0;overflow:hidden;position:relative;min-height:160px;">
+              <img src="images/lab.jpg" alt="Laboratoriya"
+                style="width:100%;height:160px;object-fit:cover;display:block;" />
+              <div
+                style="position:absolute;inset:0;background:linear-gradient(to top,rgba(6,9,18,.7) 0%,transparent 55%);">
+              </div>
+              <div style="position:absolute;bottom:12px;left:14px;right:14px;">
+                <p class="cert-t" style="color:#f0f6ff;text-align:left;margin:0;">BRCGS Akkreditasiya</p>
+                <p class="cert-s" style="color:rgba(255,255,255,.65);text-align:left;">Audit sertifikatı</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="sec sec-dark">
+        <div class="wrap">
+          <div class="sh-wrap center">
+            <span class="stag">Xidmətlər</span>
+            <h2 class="sh">Kompleks Peşəkar Həllər</h2>
+            <p class="ssub">Auditdən təlimə qədər hər mərhələdə ölçülə bilən dəstək</p>
+          </div>
+          <div class="srv-grid">
+            <div class="srv-flip" tabindex="0">
+              <div class="srv-flip-inner">
+                <div class="srv-front"><img src="images/food-audit.jpg" alt="Qida Təhlükəsizliyi" class="srv-img" />
+                  <div class="srv-front-overlay"></div>
+                  <div class="srv-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 3 5 6v5c0 4.4 2.9 8.5 7 10 4.1-1.5 7-5.6 7-10V6l-7-3Z" />
+                      <path d="m9 12 2 2 4-5" />
+                    </svg></div>
+                  <div class="srv-front-body">
+                    <h3>Qida Təhlükəsizliyi</h3>
+                    <div class="srv-tags"><span>ISO 22000</span><span>HACCP</span><span>BRCGS</span><span>IFS</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="srv-back">
+                  <div class="srv-back-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 3 5 6v5c0 4.4 2.9 8.5 7 10 4.1-1.5 7-5.6 7-10V6l-7-3Z" />
+                      <path d="m9 12 2 2 4-5" />
+                    </svg></div>
+                  <h3>Qida Təhlükəsizliyi</h3>
+                  <p>AQTA tələbləri, ISO 22000, HACCP, BRCGS və IFS standartları üzrə audit, boşluq analizi və tətbiq
+                    dəstəyi.</p>
+                  <div class="srv-tags srv-tags-back"><span>ISO
+                      22000</span><span>HACCP</span><span>BRCGS</span><span>IFS</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="srv-flip" tabindex="0">
+              <div class="srv-flip-inner">
+                <div class="srv-front"><img src="images/strategy.jpg" alt="Strateji İdarəetmə" class="srv-img" />
+                  <div class="srv-front-overlay"></div>
+                  <div class="srv-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M4 19V5" />
+                      <path d="M4 19h16" />
+                      <rect x="7" y="11" width="3" height="8" rx="1" />
+                      <rect x="12" y="7" width="3" height="12" rx="1" />
+                      <rect x="17" y="9" width="3" height="10" rx="1" />
+                    </svg></div>
+                  <div class="srv-front-body">
+                    <h3>Strateji İdarəetmə</h3>
+                    <div class="srv-tags"><span>MQ sistemləri</span><span>KPI</span><span>HR audit</span></div>
+                  </div>
+                </div>
+                <div class="srv-back">
+                  <div class="srv-back-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M4 19V5" />
+                      <path d="M4 19h16" />
+                      <rect x="7" y="11" width="3" height="8" rx="1" />
+                      <rect x="12" y="7" width="3" height="12" rx="1" />
+                      <rect x="17" y="9" width="3" height="10" rx="1" />
+                    </svg></div>
+                  <h3>Strateji İdarəetmə</h3>
+                  <p>Monitorinq və qiymətləndirmə sistemləri, KPI xəritələri, proses optimallaşdırılması, uzunmüddətli
+                    planlaşdırma.</p>
+                  <div class="srv-tags srv-tags-back"><span>MQ sistemləri</span><span>KPI</span><span>HR audit</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="srv-flip" tabindex="0">
+              <div class="srv-flip-inner">
+                <div class="srv-front"><img src="images/documents.jpg" alt="İqtisadi-Hüquqi Ekspertiza"
+                    class="srv-img" />
+                  <div class="srv-front-overlay"></div>
+                  <div class="srv-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 3v18" />
+                      <path d="M5 7h14" />
+                      <path d="m6 7-3 6h6Z" />
+                      <path d="m18 7-3 6h6Z" />
+                      <path d="M8 21h8" />
+                    </svg></div>
+                  <div class="srv-front-body">
+                    <h3>İqtisadi-Hüquqi Ekspertiza</h3>
+                    <div class="srv-tags"><span>RIA</span><span>Feasibility</span><span>Ekspertiza</span></div>
+                  </div>
+                </div>
+                <div class="srv-back">
+                  <div class="srv-back-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 3v18" />
+                      <path d="M5 7h14" />
+                      <path d="m6 7-3 6h6Z" />
+                      <path d="m18 7-3 6h6Z" />
+                      <path d="M8 21h8" />
+                    </svg></div>
+                  <h3>İqtisadi-Hüquqi Ekspertiza</h3>
+                  <p>Qanunvericilik təsirinin qiymətləndirilməsi (RIA), linqvistik ekspertiza, texniki əsaslandırma,
+                    feasibility analizi.</p>
+                  <div class="srv-tags srv-tags-back"><span>RIA</span><span>Feasibility</span><span>Ekspertiza</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="srv-flip" tabindex="0">
+              <div class="srv-flip-inner">
+                <div class="srv-front"><img src="images/training.jpg" alt="Təlim və İnkişaf" class="srv-img" />
+                  <div class="srv-front-overlay"></div>
+                  <div class="srv-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="m3 8 9-4 9 4-9 4-9-4Z" />
+                      <path d="M7 10v5c2.8 2 7.2 2 10 0v-5" />
+                      <path d="M21 8v6" />
+                    </svg></div>
+                  <div class="srv-front-body">
+                    <h3>Təlim və İnkişaf</h3>
+                    <div class="srv-tags"><span>Seminar</span><span>Sertifikat</span><span>Mentorluq</span></div>
+                  </div>
+                </div>
+                <div class="srv-back">
+                  <div class="srv-back-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="m3 8 9-4 9 4-9 4-9-4Z" />
+                      <path d="M7 10v5c2.8 2 7.2 2 10 0v-5" />
+                      <path d="M21 8v6" />
+                    </svg></div>
+                  <h3>Təlim və İnkişaf</h3>
+                  <p>Müəssisə komandaları üçün praktiki seminarlar, daxili auditor hazırlığı, sektor üzrə mentorluq
+                    proqramları.</p>
+                  <div class="srv-tags srv-tags-back"><span>Seminar</span><span>Sertifikat</span><span>Mentorluq</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section id="timeline" class="sec sec-light">
+        <div class="wrap">
+          <div class="sh-wrap center">
+            <span class="stag stag-dark">Tariximiz</span>
+            <h2 class="sh sh-dark">İnkişaf Yolumuz</h2>
+          </div>
+          <div class="tl-wrap">
+            <div class="tl-line"></div>
+            <div class="tl-item tl-left">
+              <div class="tl-card">
+                <p class="tl-year">2009</p>
+                <h3>Şirkətin Təsisi</h3>
+                <p>ASR qida sənayesi və dövlət sektoru üçün konsaltinq xidmətlərinə başladı. İlk auditor heyəti
+                  formalaşdırıldı.</p>
+              </div>
+              <div class="tl-dot"></div>
+              <div class="tl-empty"></div>
+            </div>
+            <div class="tl-item tl-right">
+              <div class="tl-empty"></div>
+              <div class="tl-dot"></div>
+              <div class="tl-card">
+                <p class="tl-year">2013</p>
+                <h3>Beynəlxalq Sertifikasiya</h3>
+                <p>Komanda ISO 22000 Lead Auditor və HACCP sahəsini genişləndirdi. İlk beynəlxalq layihələr uğurla
+                  tamamlandı.</p>
+              </div>
+            </div>
+            <div class="tl-item tl-left">
+              <div class="tl-card">
+                <p class="tl-year">2017</p>
+                <h3>Xidmət Portfelinin Genişlənməsi</h3>
+                <p>Hüquqi ekspertiza, strateji idarəetmə və feasibility analizi xidmətləri əlavə edildi.</p>
+              </div>
+              <div class="tl-dot"></div>
+              <div class="tl-empty"></div>
+            </div>
+            <div class="tl-item tl-right">
+              <div class="tl-empty"></div>
+              <div class="tl-dot"></div>
+              <div class="tl-card">
+                <p class="tl-year">2019</p>
+                <h3>İslahat Dövrünə Adaptasiya</h3>
+                <p>Müştərilərə yeni tənzimləmə mühitinə çevik keçid dəstəyi göstərildi. Rebrend tamamlandı.</p>
+              </div>
+            </div>
+            <div class="tl-item tl-left">
+              <div class="tl-card">
+                <p class="tl-year">2024</p>
+                <h3>100+ Layihə Milstonu</h3>
+                <p>50-dən çox sertifikatlı ekspertlə Azərbaycanın aparıcı konsaltinq qrupu kimi tanınır.</p>
+              </div>
+              <div class="tl-dot"></div>
+              <div class="tl-empty"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="gallery" class="sec sec-dark">
+        <div class="wrap">
+          <div class="sh-wrap center">
+            <span class="stag">Daxili Mətbəx</span>
+            <h2 class="sh">Real İş Prosesimiz</h2>
+          </div>
+          <div class="filt-row">
+            <button class="filt-btn on" onclick="filterGal(this,'all')">Hamısı</button>
+            <button class="filt-btn" onclick="filterGal(this,'audit')">Real Audit</button>
+            <button class="filt-btn" onclick="filterGal(this,'training')">Real Təlim</button>
+            <button class="filt-btn" onclick="filterGal(this,'office')">Real Ofis</button>
+          </div>
+          <div class="gal-grid" id="galGrid">
+            <article class="gal-card" data-cat="audit">
+              <div class="gal-img-wrap"><img src="images/food-audit.jpg" alt="İstehsalat Auditi" class="gal-img" />
+                <div class="gal-grad"></div><span class="gal-badge">Audit</span>
+              </div>
+              <div class="gal-body">
+                <h4>İstehsalat Auditi</h4>
+                <p>Ət emalı müəssisəsində HACCP uyğunluq yoxlaması, Bakı 2024.</p>
+              </div>
+            </article>
+            <article class="gal-card" data-cat="audit">
+              <div class="gal-img-wrap"><img src="images/documents.jpg" alt="Sənəd Audit Sessiyası" class="gal-img" />
+                <div class="gal-grad"></div><span class="gal-badge">Audit</span>
+              </div>
+              <div class="gal-body">
+                <h4>Sənəd Audit Sessiyası</h4>
+                <p>ISO 22000 sənədlərinin sistemli təhlili və boşluq hesabatı.</p>
+              </div>
+            </article>
+            <article class="gal-card" data-cat="audit">
+              <div class="gal-img-wrap"><img src="images/lab.jpg" alt="Laboratoriya Nəzarəti" class="gal-img" />
+                <div class="gal-grad"></div><span class="gal-badge">Audit</span>
+              </div>
+              <div class="gal-body">
+                <h4>Laboratoriya Nəzarəti</h4>
+                <p>Mikrobioloji risklərin sahə şəraitində qiymətləndirilməsi.</p>
+              </div>
+            </article>
+            <article class="gal-card" data-cat="training">
+              <div class="gal-img-wrap"><img src="images/training.jpg" alt="HACCP Seminarı" class="gal-img" />
+                <div class="gal-grad"></div><span class="gal-badge">Təlim</span>
+              </div>
+              <div class="gal-body">
+                <h4>HACCP Seminarı</h4>
+                <p>Qida təhlükəsizliyi mütəxəssisləri üçün praktik təlim, 2023.</p>
+              </div>
+            </article>
+            <article class="gal-card" data-cat="training">
+              <div class="gal-img-wrap"><img src="images/strategy.jpg" alt="Daxili Auditor Hazırlığı" class="gal-img" />
+                <div class="gal-grad"></div><span class="gal-badge">Təlim</span>
+              </div>
+              <div class="gal-body">
+                <h4>Daxili Auditor Hazırlığı</h4>
+                <p>Sertifikat yönümlü intensiv hazırlıq proqramı.</p>
+              </div>
+            </article>
+            <article class="gal-card" data-cat="office">
+              <div class="gal-img-wrap"><img src="images/team-meeting.jpg" alt="Komanda Strategiya Sessiyası"
+                  class="gal-img" />
+                <div class="gal-grad"></div><span class="gal-badge">Ofis</span>
+              </div>
+              <div class="gal-body">
+                <h4>Komanda Strategiya Sessiyası</h4>
+                <p>Ekspert komandası ilə rüblük inkişaf planının hazırlanması.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="sec sec-light">
+        <div class="wrap">
+          <div class="sh-wrap center">
+            <span class="stag stag-dark">Təcrübəmiz</span>
+            <h2 class="sh sh-dark">Uğurlu Layihə Nümunələri</h2>
+            <p class="ssub ssub-dark">Real problemlər · Tətbiq olunan həllər · Ölçülə bilən nəticələr</p>
+          </div>
+          <div class="prj-grid">
+            <article class="prj-card"><span class="prj-n">01</span><span class="prj-lbl">Ət Sənayesi</span>
+              <h3>HACCP Sisteminin Tam Tətbiqi</h3>
+              <div class="prj-row"><span class="prj-key">Problem</span>
+                <p>Kritik nəzarət nöqtələri müəyyən edilməmişdi, AQTA audit riski mövcud idi.</p>
+              </div>
+              <div class="prj-row"><span class="prj-key">Həll</span>
+                <p>Proses xəritəsi yeniləndi, personal təlim aldı, sənədləşmə standartlaşdırıldı.</p>
+              </div>
+              <div class="prj-result">İtkilər 20% azaldı, AQTA uyğunluğu təsdiqləndi.</div>
+            </article>
+            <article class="prj-card"><span class="prj-n">02</span><span class="prj-lbl">Süd Sektoru</span>
+              <h3>ISO 22000 Sertifikasiyasına Hazırlıq</h3>
+              <div class="prj-row"><span class="prj-key">Problem</span>
+                <p>İxrac bazarı üçün beynəlxalq sertifikat tələb olunurdu, uyğunsuzluqlar vardı.</p>
+              </div>
+              <div class="prj-row"><span class="prj-key">Həll</span>
+                <p>Gap analysis, daxili audit mexanizmi, proseslərin yenidən dizaynı aparıldı.</p>
+              </div>
+              <div class="prj-result">Sertifikasiya alındı, 3 yeni ixrac bazarı açıldı.</div>
+            </article>
+            <article class="prj-card"><span class="prj-n">03</span><span class="prj-lbl">HoReCa</span>
+              <h3>Vahid Keyfiyyət İdarəetmə Modeli</h3>
+              <div class="prj-row"><span class="prj-key">Problem</span>
+                <p>Filiallar arasında standartlar fərqli idi, koordinasiya zəif idi.</p>
+              </div>
+              <div class="prj-row"><span class="prj-key">Həll</span>
+                <p>KPI matrisi, filial yoxlama modeli, standart prosedurlar tətbiq edildi.</p>
+              </div>
+              <div class="prj-result">Müştəri məmnuniyyəti 35% artdı.</div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="knowledge" class="sec sec-dark">
+        <div class="wrap two-col">
+          <div>
+            <span class="stag">Bilik Mərkəzi</span>
+            <h2 class="sh">Pulsuz Resurslar</h2>
+            <div class="res-list">
+              <a href="#contact" class="res-item" onclick="event.preventDefault();goTo('contact')">
+                <div class="res-ic"><svg viewBox="0 0 24 24">
+                    <path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2" />
+                    <rect x="9" y="3" width="6" height="4" rx="1" />
+                    <path d="M9 12h6" />
+                    <path d="M9 16h4" />
+                  </svg></div>
+                <div class="res-txt">
+                  <p class="res-h">Qida Təhlükəsizliyi Bələdçisi</p>
+                  <p class="res-p">AQTA tələbləri, cərimə riskləri, uyğunlaşma qaydaları</p>
+                </div>
+                <div class="res-dl"><svg viewBox="0 0 24 24">
+                    <path d="M12 3v12" />
+                    <path d="m7 10 5 5 5-5" />
+                    <path d="M5 21h14" />
+                  </svg></div>
+              </a>
+              <a href="#contact" class="res-item" onclick="event.preventDefault();goTo('contact')">
+                <div class="res-ic"><svg viewBox="0 0 24 24">
+                    <rect x="3" y="3" width="18" height="14" rx="2" />
+                    <path d="M9 17v4" />
+                    <path d="M15 17v4" />
+                    <path d="M9 21h6" />
+                    <path d="M7 8h10" />
+                    <path d="M7 11h6" />
+                  </svg></div>
+                <div class="res-txt">
+                  <p class="res-h">Müəssisədaxili Audit Şablonu</p>
+                  <p class="res-p">Excel formatında hazır yoxlama siyahısı</p>
+                </div>
+                <div class="res-dl"><svg viewBox="0 0 24 24">
+                    <path d="M12 3v12" />
+                    <path d="m7 10 5 5 5-5" />
+                    <path d="M5 21h14" />
+                  </svg></div>
+              </a>
+              <a href="#contact" class="res-item" onclick="event.preventDefault();goTo('contact')">
+                <div class="res-ic"><svg viewBox="0 0 24 24">
+                    <path
+                      d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2Z" />
+                  </svg></div>
+                <div class="res-txt">
+                  <p class="res-h">ISO 22000 Keçid Yol Xəritəsi</p>
+                  <p class="res-p">Addım-addım sertifikasiya prosesi, zaman planı</p>
+                </div>
+                <div class="res-dl"><svg viewBox="0 0 24 24">
+                    <path d="M12 3v12" />
+                    <path d="m7 10 5 5 5-5" />
+                    <path d="M5 21h14" />
+                  </svg></div>
+              </a>
+            </div>
+          </div>
+          <div>
+            <span class="stag">Ekspert Bloqu</span>
+            <h2 class="sh">Son Yazılar</h2>
+            <div class="blog-list">
+              <article class="blog-card"><img src="images/food-audit.jpg" alt="Blog" class="blog-img" />
+                <div class="blog-body">
+                  <p class="blog-date">Noyabr 2024</p>
+                  <h4>2025-ci il üçün AQTA audit tendensiyaları</h4>
+                  <p>Növbəti ilin planlamasında nələrə diqqət etmək lazımdır.</p>
+                </div>
+              </article>
+              <article class="blog-card"><img src="images/documents.jpg" alt="Blog" class="blog-img" />
+                <div class="blog-body">
+                  <p class="blog-date">Oktyabr 2024</p>
+                  <h4>BRCGS Versiya 9: Əsas dəyişikliklər</h4>
+                  <p>Son versiyada tələblər necə dəyişdi? Müəssisəniz nə etməlidir?</p>
+                </div>
+              </article>
+              <article class="blog-card"><img src="images/lab.jpg" alt="Blog" class="blog-img" />
+                <div class="blog-body">
+                  <p class="blog-date">Sentyabr 2024</p>
+                  <h4>Ət sektorunda mikrobioloji risklər</h4>
+                  <p>Praktiki tövsiyələr və sektoral müqayisəli analiz.</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="sec sec-light">
+        <div class="wrap two-col">
+          <div>
+            <span class="stag stag-dark">Əlaqə</span>
+            <h2 class="sh sh-dark">Bizimlə Əlaqə Saxlayın</h2>
+            <p class="sp sp-dark">Müəssisənizin ehtiyaclarını anlamaq üçün əvvəlcə pulsuz ekspert konsultasiyası
+              keçiririk.</p>
+            <div class="cnt-info">
+              <div class="cnt-row">
+                <div class="cnt-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 21s7-4.7 7-11a7 7 0 1 0-14 0c0 6.3 7 11 7 11Z" />
+                    <circle cx="12" cy="10" r="2.5" />
+                  </svg></div>
+                <div><strong>Ofis</strong><span>Bakı şəhəri, Azərbaycan</span></div>
+              </div>
+              <div class="cnt-row">
+                <div class="cnt-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                      d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.2 19.2 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7 12 12 0 0 0 .7 2.8 2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.8 2.1Z" />
+                  </svg></div>
+                <div><strong>Telefon</strong><span>+994 XX XXX XX XX</span></div>
+              </div>
+              <div class="cnt-row">
+                <div class="cnt-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="4" width="20" height="16" rx="2" />
+                    <path d="m2 7 10 7 10-7" />
+                  </svg></div>
+                <div><strong>E-poçt</strong><span>info@asrgroup.az</span></div>
+              </div>
+            </div>
+            <div class="map-wrap">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3038.5!2d49.8320!3d40.3890!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40307d6a4b5ae5a3%3A0x7b2c8e1f2a4d9e0c!2sASPA%20U%C5%9Faq%20Ba%C4%9F%C3%A7as%C4%B1!5e0!3m2!1saz!2saz!4v1713870000000"
+                title="ASPA Uşaq Bağçası" loading="lazy" allowfullscreen
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+          <form class="cnt-form"
+            onsubmit="event.preventDefault();alert('Müraciətiniz qəbul edildi! Ən qısa zamanda sizinlə əlaqə saxlayacağıq.')">
+            <h3>Ekspert Hovuzuna Qoşulun</h3>
+            <p>Formu doldurun, komandamız sizinlə əlaqə saxlayacaq.</p>
+            <label>Ad Soyad<input type="text" placeholder="Adınızı daxil edin" required /></label>
+            <label>E-poçt<input type="email" placeholder="email@example.com" required /></label>
+            <label>İxtisas sahəsi<input type="text" placeholder="Məs: qida texnologiyası" /></label>
+            <label>Sertifikat<input type="text" placeholder="Məs: ISO 22000 Lead Auditor" /></label>
+            <label>Mesaj<textarea rows="4" placeholder="Özünüz haqqında qısa məlumat..."></textarea></label>
+            <button type="submit" class="btn-gold w-full">Müraciəti Göndər</button>
+          </form>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="ftr">
+      <div class="wrap ftr-inner">
+        <div class="ftr-brand">
+          <svg class="logo-svg" viewBox="0 0 320 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="42,4  52,20  32,20" fill="#ffffff" />
+            <polygon points="28,23 38,39  18,39" fill="#c9a84c" />
+            <polygon points="56,23 66,39  46,39" fill="#ffffff" opacity=".88" />
+            <polygon points="14,42 24,58   4,58" fill="#ffffff" opacity=".72" />
+            <polygon points="42,42 52,58  32,58" fill="#e2bf6e" />
+            <polygon points="70,42 80,58  60,58" fill="#ffffff" opacity=".58" />
+            <polygon points="28,61 38,76  18,76" fill="#c9a84c" opacity=".82" />
+            <polygon points="56,61 66,76  46,76" fill="#ffffff" opacity=".48" />
+            <line x1="96" y1="10" x2="96" y2="70" stroke="#c9a84c" stroke-width="1.4" opacity=".65" />
+            <text x="108" y="42" font-family="'Arial Black',Arial,sans-serif" font-weight="900" font-size="30"
+              fill="#ffffff" letter-spacing="-0.5">ASR</text>
+            <text x="108" y="62" font-family="Arial,sans-serif" font-weight="700" font-size="15" fill="#ffffff"
+              opacity=".72">Group</text>
+            <text x="182" y="38" font-family="Arial,sans-serif" font-weight="700" font-size="14.5" fill="#c9a84c"
+              letter-spacing="0.2">Development</text>
+            <text x="182" y="57" font-family="Arial,sans-serif" font-weight="700" font-size="14.5" fill="#c9a84c"
+              letter-spacing="0.2">Consulting</text>
+          </svg>
+          <p>15 illik təcrübə ilə qida sənayesi və strateji idarəetmə sahəsində Azərbaycanın aparıcı konsaltinq qrupu.
+          </p>
+          <div class="ftr-badges"><span>ISO</span><span>HACCP</span><span>AQTA</span><span>BRCGS</span></div>
+          <div class="social-row">
+            <a class="soc-btn" href="https://instagram.com/asrgroup" target="_blank" rel="noreferrer"
+              aria-label="Instagram"><svg viewBox="0 0 24 24">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+              </svg></a>
+            <a class="soc-btn" href="https://linkedin.com/company/asrgroup" target="_blank" rel="noreferrer"
+              aria-label="LinkedIn"><svg viewBox="0 0 24 24">
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+              </svg></a>
+            <a class="soc-btn" href="https://facebook.com/asrgroup" target="_blank" rel="noreferrer"
+              aria-label="Facebook"><svg viewBox="0 0 24 24">
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+              </svg></a>
+            <a class="soc-btn" href="https://youtube.com/@asrgroup" target="_blank" rel="noreferrer"
+              aria-label="YouTube"><svg viewBox="0 0 24 24">
+                <path
+                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+              </svg></a>
+            <a class="soc-btn" href="https://tiktok.com/@asrgroup" target="_blank" rel="noreferrer"
+              aria-label="TikTok"><svg viewBox="0 0 24 24">
+                <path
+                  d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z" />
+              </svg></a>
+          </div>
+        </div>
+        <div class="ftr-col">
+          <p class="ftr-h">Xidmətlər</p>
+          <button onclick="goTo('services')">Qida Təhlükəsizliyi</button>
+          <button onclick="goTo('services')">ISO 22000 / HACCP</button>
+          <button onclick="goTo('services')">Strateji İdarəetmə</button>
+          <button onclick="goTo('services')">Hüquqi Ekspertiza</button>
+        </div>
+        <div class="ftr-col">
+          <p class="ftr-h">Şirkət</p>
+          <button onclick="goTo('about')">Haqqımızda</button>
+          <button onclick="goTo('timeline')">Tariximiz</button>
+          <button onclick="goTo('projects')">Layihələr</button>
+          <button onclick="goTo('gallery')">Qalereya</button>
+        </div>
+        <div class="ftr-col">
+          <p class="ftr-h">Resurslar</p>
+          <button onclick="goTo('knowledge')">Pulsuz Bələdçi</button>
+          <button onclick="goTo('knowledge')">Audit Şablonu</button>
+          <button onclick="goTo('knowledge')">Ekspert Bloqu</button>
+          <button onclick="goTo('contact')">Əlaqə</button>
+        </div>
+      </div>
+      <div class="ftr-bottom">
+        <div class="wrap ftr-bottom-inner">
+          <p>© 2024 ASR Development Consulting Group. Bütün hüquqlar qorunur.</p>
+          <p>Bakı, Azərbaycan</p>
+        </div>
+      </div>
+    </footer>
+
+    <div class="float-stack">
+      <a class="fab fab-wa" href="https://wa.me/994XXXXXXXXX" target="_blank" rel="noreferrer" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24">
+          <path
+            d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.482 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.867-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+        </svg>
+      </a>
+      <button class="fab fab-top" id="fabTop" onclick="window.scrollTo({top:0,behavior:'smooth'})"
+        aria-label="Yuxarı qayıt">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 19V5" />
+          <path d="m5 12 7-7 7 7" />
+        </svg>
+      </button>
+    </div>
+
+  </div>
+
+  <script src="style.js"></script>
+</body>
+
+</html>
