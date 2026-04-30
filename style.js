@@ -151,3 +151,27 @@ const track = document.getElementById('marqueeTrack');
 [...BAND, ...BAND].forEach(item => {
     track.innerHTML += `<span class="mq-chunk"><span class="${item.gold ? 'mq-item mq-gold' : 'mq-item'}">${item.txt}</span><span class="mq-sep">◆</span></span>`;
 });
+function toggleMode() {
+    const isDark = html.getAttribute('data-theme') === 'dark';
+    html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+
+    // Loqonu tapın
+    const logo = document.querySelector('.logo-img');
+
+    // Əgər dark-dan light-a keçiriksə (isDark true idisə), logo1.png qoy, yoxsa logo.png
+    if (logo) {
+        logo.src = isDark ? 'images/logo1.png' : 'images/logo.png';
+    }
+
+    modeIcon.textContent = isDark ? '☀️' : '🌙';
+    modeTxt.textContent = isDark ? 'Dark' : 'Light';
+    localStorage.setItem('theme', isDark ? 'light' : 'dark');
+}
+window.addEventListener('DOMContentLoaded', () => {
+    const currentTheme = html.getAttribute('data-theme');
+    const logo = document.querySelector('.logo-img');
+
+    if (logo && currentTheme === 'light') {
+        logo.src = 'images/logo1.png';
+    }
+});
