@@ -172,6 +172,6 @@ window.addEventListener('DOMContentLoaded', () => {
     const logo = document.querySelector('.logo-img');
 
     if (logo && currentTheme === 'light') {
-        logo.src = 'images/logo1.png';
+        logo.src = 'images/logo4.jpeg';
     }
 });
